@@ -20,11 +20,12 @@ import java.util.List;
 * then depending the first two levels we enter one of the three if blocks, we go through the array and compare
 * every item to the next if we find a problem we return false; if we finish the loop the function return true
 * So we add 1 to the total and go for the next report!
-*
+**
 * */
 
 public class SolutionPart1 {
     public static void main(String[] args) throws IOException {
+
         List<String> lines = Files.readAllLines(Path.of("C:\\Users\\pc\\Documents\\AdventofCode\\Solution\\input.txt"));
         int total = 0;
         for(String line : lines){
