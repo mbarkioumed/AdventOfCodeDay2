@@ -15,27 +15,32 @@ public class Main {
             int[] nums2 = Arrays.stream(nums1)
                     .mapToInt(Integer::parseInt)
                     .toArray();
-            int n = nums2.length;
-            boolean flag = true;
-            if(nums2[0] < nums2[1]){
-                for(int i = 0; i<n - 1; i++){
-                    if(nums2[i] >= nums2[i + 1] || nums2[i] + 3 < nums2[i+1]){
-                        flag = false;
-                    }
-                }
-            }
-            else if(nums2[0] > nums2[1]){
-                for(int i = 0; i<n - 1; i++){
-                    if(nums2[i] <= nums2[i + 1] || nums2[i] - 3 > nums2[i+1]){
-                        flag = false;
-                    }
-                }
-            }else{
-                flag = false;
-            }
+            final boolean flag = isFlag(nums2);
             if(flag)
                 total++;
         }
         System.out.println(total);
+    }
+
+    private static boolean isFlag(int[] nums2) {
+        int n = nums2.length;
+        boolean flag = true;
+        if(nums2[0] < nums2[1]){
+            for(int i = 0; i<n - 1; i++){
+                if(nums2[i] >= nums2[i + 1] || nums2[i] + 3 < nums2[i+1]){
+                    flag = false;
+                }
+            }
+        }
+        else if(nums2[0] > nums2[1]){
+            for(int i = 0; i<n - 1; i++){
+                if(nums2[i] <= nums2[i + 1] || nums2[i] - 3 > nums2[i+1]){
+                    flag = false;
+                }
+            }
+        }else{
+            flag = false;
+        }
+        return flag;
     }
 }
