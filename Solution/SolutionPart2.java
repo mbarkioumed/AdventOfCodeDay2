@@ -15,7 +15,7 @@ import java.util.List;
  * */
 public class SolutionPart2 {
     public static void main(String[] args) throws IOException {
-        List<String> lines = Files.readAllLines(Path.of("C:\\Users\\pc\\Documents\\AdventofCode\\Solution\\input.txt"));
+        List<String> lines = Files.readAllLines(Path.of("input.txt"));
         int total = 0;
         for(String line : lines){
             String[] nums = line.split(" ");
